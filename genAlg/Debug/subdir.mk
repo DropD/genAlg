@@ -6,17 +6,20 @@
 CPP_SRCS += \
 ../individual.cpp \
 ../main.cpp \
-../population.cpp 
+../population.cpp \
+../randomGeneSwapingStrategy.cpp 
 
 OBJS += \
 ./individual.o \
 ./main.o \
-./population.o 
+./population.o \
+./randomGeneSwapingStrategy.o 
 
 CPP_DEPS += \
 ./individual.d \
 ./main.d \
-./population.d 
+./population.d \
+./randomGeneSwapingStrategy.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
