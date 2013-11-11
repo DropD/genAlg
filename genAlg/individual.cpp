@@ -2,7 +2,7 @@
 #include <iostream>
 #include "individual.h"
 #include <sstream>
-#include "combinationStrategy.h"
+//#include "combinationStrategy.cpp"
 
 //class individual{
 	//private:
@@ -106,10 +106,10 @@ unsigned int individual::getNdim(){
 	return (this->ndim);
 }
 
-void individual::setCombinationStrategy(combinationStrategy cstrat){
-	this->cstrategy = cstrat;
+void individual::setCombinationStrategy(combinationStrategy& cstr){
+	cstrategy = &cstr;
 }
 
-individual individual::combine(individual ind ){
-	cstrategy.combine(ind,ind);
+individual individual::combineIndividuals(individual ind ){
+	return cstrategy->combine(*this,ind);
 }

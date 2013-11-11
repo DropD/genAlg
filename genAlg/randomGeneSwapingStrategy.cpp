@@ -1,6 +1,8 @@
 #include "individual.h"
-#include "combinationStrategy.h"
+//#include "individual.cpp"
+//#include "combinationStrategy.cpp"
 
+class combinationStrategy;
 class randomGeneSwapingStrategy : public combinationStrategy{
 public:
 	
@@ -10,6 +12,7 @@ public:
 	}
 	
 	individual combine(individual i1, individual i2){
+		combine(i1,i2);
 		//Here lies the implementation of the combination strategy:
 		std::vector<float> i3FV(i2.getFeatureVector());
 		
@@ -26,7 +29,6 @@ public:
 		for(unsigned int i=0;i<i1.getNdim();i++){
 			i3FV.at(i) = dint(r)<fitnessBias ? (i1.getFeatureVector()).at(i) : (i2.getFeatureVector()).at(i) ;
 		}
-		
 		
 		return individual(i3FV);
 
