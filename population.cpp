@@ -15,7 +15,9 @@ population::population(std::vector<individual> indivss){
 		(this -> indivs).push_back(indivss[i]);
 	
 	//I added a comment
-	std::cout<<"I added something that does something"<<std::endl;
+	//std::cout<<"I added something that does something"<<std::endl;
+	//I comented out the line above
+	std::cout<<"And I added a line below..."<<std::endl;	
 }
 
 population::population(unsigned int npop,std::vector<std::pair<float,float> > vb){
