@@ -1,13 +1,12 @@
-#ifndef OBJECTIVEFUNCTIONSTRATEGY_H_
-#define OBJECTIVEFUNCTIONSTRATEGY_H_
-#include <vector>
-class individual;
-class objectiveFunctionStrategy
-{
-public:
-	objectiveFunctionStrategy();
-	virtual ~objectiveFunctionStrategy();
-	virtual float evaluate(individual);
-	virtual float evaluate(std::vector<float>);
-};
-#endif /*OBJECTIVEFUNCTIONSTRATEGY_H_*/
+#ifndef OF_CPP
+#define OF_CPP
+
+//#include <vector>
+//#include "individual.h"
+//class individual;
+//class individual;
+//objectiveFunctionStrategy::objectiveFunctionStrategy(){};
+//objectiveFunctionStrategy::~objectiveFunctionStrategy();
+//float objectiveFunctionStrategy::evaluate(individual){};
+//float objectiveFunctionStrategy::evaluate(std::vector<float>){};
+#endif

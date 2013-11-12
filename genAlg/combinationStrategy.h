@@ -8,7 +8,7 @@ class individual;
 class combinationStrategy{
 public:
 	combinationStrategy(){};
-	individual combine(individual,individual);
+	virtual individual combine(individual,individual);
 };
 
 

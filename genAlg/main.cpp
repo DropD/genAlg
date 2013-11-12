@@ -19,10 +19,13 @@ int main(){
 	/*Creating random engine and passing it to who needs it*/
 	std::default_random_engine r{};
 	std::cout<<"Trying to print population..."<<std::endl;
-	objectiveFunctionStrategy OdFS();
-//ObjectiveFunctionhyperBowl
-	//ObjectiveFunctionhyperBowl & odfsConc();
-	//OdFS = (objectiveFunctionStrategy &)odfsConc;
+	//objectiveFunctionStrategy* OdFSptr;
+	objectiveFunctionStrategy* OfHB = new ObjectiveFunctionhyperBowl;
+	//ObjectiveFunctionhyperBowl of();
+	
+	//OdFS = dynamic_cast<OdFS&> (O
+	//fHB);
+	
 	//pop.setObjFuncStrat(OdFS);
 	//pop.printPop();
 	std::cout<<"Printed population..."<<std::endl;

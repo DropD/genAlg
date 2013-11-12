@@ -6,8 +6,11 @@
 #include <algorithm>
 #include <random>
 //#include "sexEnum.h"
-#include "individual.h"
-#include "population.h"
 #include "ObjectiveFunctionhyperBowl.cpp"
 #include "objectiveFunctionStrategy.cpp"
+
+#include "individual.h"
+
+#include "population.h"
+
 #endif /*GENALG_H_*/
