@@ -1,5 +1,5 @@
 #include "individual.h"
-//#include "individual.cpp"
+
 //#include "combinationStrategy.cpp"
 
 class combinationStrategy;

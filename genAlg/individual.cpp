@@ -2,13 +2,7 @@
 #include <iostream>
 #include "individual.h"
 #include <sstream>
-//#include "combinationStrategy.cpp"
 
-//class individual{
-	//private:
-		//std::vector<float> featureVector;
-		//sexEnum sex;
-	//public:
 individual::individual(std::vector<float> fv, sexEnum Sex){
 	for(unsigned int i=0;i<fv.size() ; i++){
 		featureVector.push_back(fv[i]);
@@ -21,9 +15,14 @@ individual::individual(std::vector<float> fv){
 	//asexual constructor
 	for(unsigned int i=0;i<fv.size() ; i++){
 		featureVector.push_back(fv[i]);
-		//std::cout<<fv[i]<<std::endl;
 	}
 	this -> ndim = featureVector.size();
+}
+
+individual individual::copy(){
+	std::vector<float> cop = getFeatureVector();
+	individual ind(cop);
+	return ind;
 }
 /**
  * The make offspring method returns a new individual.
@@ -42,6 +41,9 @@ individual individual::makeOffspringAsexual(individual indiv){
  * This method gives access to the private features of the individual
  */
 std::vector<float> individual::getFeatureVector(){
+	/*I supposedly coded it in such a way that there never
+	 *exists an individual without a feature vector - assertion not neccessary
+	 */
 	return this->featureVector;
 }
 
@@ -73,32 +75,48 @@ individual individual::combine1(individual indiv){
 	return individual(fv);
 }
 std::default_random_engine individual::getRngEngine(){
+	if(RNGEngineSet==false) assert(0);
 	return this->rngEngine;
 }
+
 float individual::getObjectiveFunction(){
+	if(CombStratAvail == false) {assert(0);}
 	//Here the objective function is calculated somehow...
 	//Let's say a simple hyperbowl...
-	float F =0 ;
-	for(unsigned int i=0;i<(this->featureVector).size();i++){
-		F += featureVector[i]*featureVector[i];
+	float Fc=0;
+	if(OFCalc == false){
+		std::cout<<"Now I'm trying to calculate the OF on this..."<<std::endl;
+		
+		//individual tempIndiv = this->copy();
+		std::cout<<"eval "<<std::endl;
+		//std::cout<<ofstrategy<<std::endl;
+		std::vector<float> vv = this->featureVector;
+		Fc = ofstrategy->evaluate(vv);
 	}
-	return F;
+	if(OFCalc == true){
+		Fc = Objective;
+	}
+	return Fc;
 }
+
 void individual::setRNG(std::default_random_engine rngEngine){
 	this->rngEngine = rngEngine;
 }
 
 std::string individual::featureLine(){
 	std::string s;
-	//std::cout<<"The current individuals dim is  "<< this->ndim<<" "<<std::endl;
+	std::ostringstream ss;
 	for(unsigned int i=0;i<(this->ndim);i++){
-		//sprintf(c,"%f",(this->featureVector).at(i));
-		std::ostringstream ss;
 		ss << (this->featureVector).at(i);
-		s.append(ss.str());
 		if(i!=(ndim-1))  s.append(", ");
-		//std::cout<<(this->featureVector).at(i)<<std::endl;
 	}
+	//std::cout<<"I'm out of the feature line loop"<<std::endl;
+
+	ss<<(this->getObjectiveFunction());
+
+	std::cout<<"I have not created the ss"<<std::endl;
+	s.append(ss.str());
+	std::cout<<"I have created the ss"<<std::endl;
 	return s;
 }
 
@@ -106,10 +124,16 @@ unsigned int individual::getNdim(){
 	return (this->ndim);
 }
 
-void individual::setCombinationStrategy(combinationStrategy& cstr){
-	cstrategy = &cstr;
-}
-
 individual individual::combineIndividuals(individual ind ){
 	return cstrategy->combine(*this,ind);
+}
+
+void individual::setObjectiveFunction(objectiveFunctionStrategy& of){
+	OFAvailable=true;
+	ofstrategy = &of;
+}
+
+void individual::setCombinationStrategy(combinationStrategy& cstr){
+	CombStratAvail=true;
+	cstrategy = &cstr;
 }

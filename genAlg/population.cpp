@@ -14,8 +14,6 @@ population::population(std::vector<individual> indivss){
 	for(unsigned int i=0;i<this -> npop;i++)
 		(this -> indivs).push_back(indivss[i]);
 	
-	//I added a comment
-	std::cout<<"I added something that does something"<<std::endl;
 }
 
 population::population(unsigned int npop,std::vector<std::pair<float,float> > vb){
@@ -26,13 +24,14 @@ population::population(unsigned int npop,std::vector<std::pair<float,float> > vb
 	std::uniform_real_distribution<float> rdist(0,1);
 	
 	this->npop = npop;
+	std::cout<<npop<<std::endl;
 	this->ndim = vb.size();
+	std::cout<<vb.size()<<std::endl;
 	
 	for(unsigned int i=0;i<npop;i++){
 		for(unsigned int b=0; b<vb.size();b++){
 			featureVector.at(b)  = rdist(this->rng)*(vb.at(b).second - vb.at(b).first) + vb.at(b).first;
 		}
-		
 		individual ind(featureVector);
 		(this->indivs).push_back(ind);
 		std::cout<<"created an indiv. "<<i<<std::endl;
@@ -50,10 +49,17 @@ std::vector<float> population::getObjectiveFunctions(){
 	}
 	return vec;
 }
+
 void population::printPop(){
 	for(unsigned int i=0;     i < (this->npop) ; i++){
 		std::cout<<indivs.at(i).featureLine();
 		std::cout<<std::endl;
+	}
+}
+
+void population::setObjFuncStrat(objectiveFunctionStrategy& of){
+	for(unsigned int i=0;i<npop;i++){
+		(this->indivs).at(i).setObjectiveFunction(of);
 	}
 }
 

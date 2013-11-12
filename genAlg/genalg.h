@@ -8,4 +8,6 @@
 //#include "sexEnum.h"
 #include "individual.h"
 #include "population.h"
+#include "ObjectiveFunctionhyperBowl.cpp"
+#include "objectiveFunctionStrategy.cpp"
 #endif /*GENALG_H_*/
