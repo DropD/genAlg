@@ -1,9 +1,12 @@
 #ifndef POPULATION_H_
 #define POPULATION_H_
 #include "individual.h"
+//class indiv
+//idual;
 
+//class individual;
 class objectiveFunctionStrategy;
-
+class commbinationStrategy;
 class population{
 	private:
 		unsigned short int 			ndim; //the dimensionallity of the individuals

@@ -4,20 +4,29 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../ObjectiveFunctionhyperBowl.cpp \
+../combinationStrategy.cpp \
 ../individual.cpp \
 ../main.cpp \
+../objectiveFunctionStrategy.cpp \
 ../population.cpp \
 ../randomGeneSwapingStrategy.cpp 
 
 OBJS += \
+./ObjectiveFunctionhyperBowl.o \
+./combinationStrategy.o \
 ./individual.o \
 ./main.o \
+./objectiveFunctionStrategy.o \
 ./population.o \
 ./randomGeneSwapingStrategy.o 
 
 CPP_DEPS += \
+./ObjectiveFunctionhyperBowl.d \
+./combinationStrategy.d \
 ./individual.d \
 ./main.d \
+./objectiveFunctionStrategy.d \
 ./population.d \
 ./randomGeneSwapingStrategy.d 
 

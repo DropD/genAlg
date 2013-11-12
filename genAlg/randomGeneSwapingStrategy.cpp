@@ -2,7 +2,7 @@
 
 //#include "combinationStrategy.cpp"
 
-class combinationStrategy;
+//class combinationStrategy;
 class randomGeneSwapingStrategy : public combinationStrategy{
 public:
 	
@@ -29,8 +29,6 @@ public:
 		for(unsigned int i=0;i<i1.getNdim();i++){
 			i3FV.at(i) = dint(r)<fitnessBias ? (i1.getFeatureVector()).at(i) : (i2.getFeatureVector()).at(i) ;
 		}
-		
 		return individual(i3FV);
-
 	}
 };
