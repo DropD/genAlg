@@ -5,9 +5,12 @@
 #include <iostream>
 #include <random>
 #include "sexEnum.h"
-//#include "combinationStrategy.cpp"
-//#include "objectiveFunctionStrategy.cpp"
+#include "combinationStrategy.cpp"
+#include "objectiveFunctionStrategy.cpp"
 #include <assert.h>
+
+//class objectiveFunctionStrategy;
+//class combinationStrategy;
 
 class individual{
 	private:

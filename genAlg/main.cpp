@@ -1,8 +1,8 @@
 //#include "individual.cpp"
 //#include "population.cpp"
 #include "genalg.h"
-//class objectiveFunctionStrategy;
-//class ObjectiveFunctionhyperBowl;
+class objectiveFunctionStrategy;
+class ObjectiveFunctionhyperBowl;
 
 //#include "individual.cpp"
 int main(){
@@ -19,8 +19,10 @@ int main(){
 	/*Creating random engine and passing it to who needs it*/
 	std::default_random_engine r{};
 	std::cout<<"Trying to print population..."<<std::endl;
-	objectiveFunctionStrategy OdFS();
-//ObjectiveFunctionhyperBowl
+	//objectiveFunctionStrategy OdFS();
+	ObjectiveFunctionhyperBowl ofb();
+	objectiveFunctionStrategy * ofs_ptr = new ObjectiveFunctionhyperBowl();
+	//ofs_ptr = dynamic_cast<objectiveFunctionStrategy*>(&ofb);
 	//ObjectiveFunctionhyperBowl & odfsConc();
 	//OdFS = (objectiveFunctionStrategy &)odfsConc;
 	//pop.setObjFuncStrat(OdFS);

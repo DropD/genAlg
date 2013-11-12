@@ -3,6 +3,8 @@
 #include "individual.h"
 #include <sstream>
 
+//#include "objectiveFunctionStrategy.cpp"
+//#include "combinationStrategy.cpp"
 individual::individual(std::vector<float> fv, sexEnum Sex){
 	for(unsigned int i=0;i<fv.size() ; i++){
 		featureVector.push_back(fv[i]);
@@ -130,7 +132,7 @@ individual individual::combineIndividuals(individual ind ){
 
 void individual::setObjectiveFunction(objectiveFunctionStrategy& of){
 	OFAvailable=true;
-	ofstrategy = &of;
+	ofstrategy = & of;
 }
 
 void individual::setCombinationStrategy(combinationStrategy& cstr){

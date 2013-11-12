@@ -8,6 +8,5 @@ public:
 	objectiveFunctionStrategy();
 	virtual ~objectiveFunctionStrategy();
 	virtual float evaluate(individual);
-	virtual float evaluate(std::vector<float>);
 };
 #endif /*OBJECTIVEFUNCTIONSTRATEGY_H_*/

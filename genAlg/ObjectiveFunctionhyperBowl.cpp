@@ -10,9 +10,10 @@ class ObjectiveFunctionhyperBowl: public objectiveFunctionStrategy
 public:
 	ObjectiveFunctionhyperBowl();
 	virtual ~ObjectiveFunctionhyperBowl();
-	float evaluate(individual);
+	virtual float evaluate(individual);
 };
 
+/*
 float ObjectiveFunctionhyperBowl::evaluate(individual ind){
 	std::cout<<"i'm in float ObjectiveFunctionhyperBowl::evaluate"<<std::endl;
 	//Here the objective function is calculated somehow...
@@ -26,5 +27,5 @@ float ObjectiveFunctionhyperBowl::evaluate(individual ind){
 	}
 	return Fc;
 }
-
+*/
 #endif /*OBJECTIVEFUNCTIONHYPERBOWL_H_*/
