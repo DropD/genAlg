@@ -45,8 +45,8 @@ int main(){
 	a->dosth();
 	
 	B* b = new B;
-	b->setObj(1);
-	b->setObj(&a);
+	//b->setObj(1);
+	b->setObj(a&);
 	b->doSthInB();
 
 }
