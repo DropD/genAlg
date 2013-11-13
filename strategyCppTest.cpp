@@ -5,7 +5,7 @@ public:
 	virtual void dosth()=0;
 };
 
-class Conc:public Abs{
+class Conc1:public Abs{
 public:
 	void dosth(){
 		std::cout<<"I'm doing sth"<<std::endl;
@@ -18,45 +18,28 @@ public:
 	}
 };
 
-class Context{
-public:
-	Abs* a ;
-	void setObj(int i){
-		if(i==0)
-			a = new Conc;
-
-		if(i==2)
-			a = new Conc2;
-			
-	}
-	void doctx(){
-		a->dosth();
-	}
-};
-
-
 class B{
-	Context cont;
+	Abs* nakedStrategy;
 	public:
 		void doSthInB(){
-			cont.doctx();
+			nakedStrategy->dosth();
 		}
-		void setContext(Context ctx){
+		void setContext(Context* ctx){
 			this->cont = ctx;
+		}
+		void setNakedStrategy(Abs * abs){
+			this->nakedStrategy = abs;
 		}
 };
 
 int main(){
-	std::cout<<"compiles"<<std::endl;
-	Abs* a = new Conc();
-	a = new Conc2();
-	a->dosth();
-	
-	Context ctx;
-	ctx.setObj(1);
+	Abs* a = new Conc2;	
+	Context* ctx = new Context;ctx->setObj(0);
 	
 	B* b = new B;
-	b->setContext(ctx);
-	b->doSthInB();
+	b->setNakedStrategy(a);
+	
+	std::cout<<"This gives a segfault..."<<std::endl;
+	b->doSthInB();	
 }
 

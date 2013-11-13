@@ -1,10 +1,13 @@
 //#include "individual.cpp"
 //#include "population.cpp"
 #include "genalg.h"
+#include <typeinfo>
 //class objectiveFunctionStrategy;
 //class ObjectiveFunctionhyperBowl;
 
 //#include "individual.cpp"
+
+
 int main(){
 	std::cout<<"It compiled and runned"<<std::endl;
 	
@@ -19,11 +22,21 @@ int main(){
 	/*Creating random engine and passing it to who needs it*/
 	std::default_random_engine r{};
 	std::cout<<"Trying to print population..."<<std::endl;
-	//objectiveFunctionStrategy* OdFSptr;
-	objectiveFunctionStrategy* OfHB = new ObjectiveFunctionhyperBowl;
+	//objectiveFunctionStrategy* oo = new ObjectiveFunctionhyperBowl;
+	//ObjectiveFunctionhyperBowl* bb;
+	std::cout<<"just before the constructor:"<<std::endl;
+	//ObjectiveFunctionhyperBowl ofhb();
+	//bb = &ofhb;
+	new ObjectiveFunctionhyperBowl;
+//	ObjectiveFunctionhyperBowl* objb = ();
+	//objb.evaluate(pop.getIndividual(3));
+	
+	//std::cout<<typeid(objb).<<std::endl;
+	//bb = &objb;
+	//ObjectiveFunctionhyperBowl bb();
 	//ObjectiveFunctionhyperBowl of();
 	
-	//OdFS = dynamic_cast<OdFS&> (O
+	//OdFS = dynamic_cast<OdFS&>
 	//fHB);
 	
 	//pop.setObjFuncStrat(OdFS);

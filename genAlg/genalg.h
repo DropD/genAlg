@@ -9,6 +9,9 @@
 #include "ObjectiveFunctionhyperBowl.cpp"
 #include "objectiveFunctionStrategy.cpp"
 
+#include "ObjectiveFunctionhyperBowl.h"
+#include "objectiveFunctionStrategy.h"
+
 #include "individual.h"
 
 #include "population.h"
