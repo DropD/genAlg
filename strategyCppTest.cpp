@@ -18,23 +18,31 @@ public:
 	}
 };
 
-class B{
+class Context{
+public:
 	Abs* a ;
+	void setObj(int i){
+		if(i==0)
+			a = new Conc;
+
+		if(i==2)
+			a = new Conc2;
+			
+	}
+	void doctx(){
+		a->dosth();
+	}
+};
+
+
+class B{
+	Context cont;
 	public:
 		void doSthInB(){
-			a->dosth();
+			cont.doctx();
 		}
-/*		void setObj(int i){
-			if(i == 1){
-				a = new Conc;
-			}
-			else{
-				a = new Conc2;
-			}
-		}*/
-		
-		void setObj(Abs& aa){
-				a = &aa;
+		void setContext(Context ctx){
+			this->cont = ctx;
 		}
 };
 
@@ -44,10 +52,11 @@ int main(){
 	a = new Conc2();
 	a->dosth();
 	
+	Context ctx;
+	ctx.setObj(1);
+	
 	B* b = new B;
-	//b->setObj(1);
-	b->setObj(a&);
+	b->setContext(ctx);
 	b->doSthInB();
-
 }
 
