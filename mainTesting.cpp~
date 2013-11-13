@@ -71,14 +71,13 @@
 		objectiveFunctionStrategy* ofs;
 		ofs = dynamic_cast<objectiveFunctionStrategy*> (&hb);
 		*/
-		v.push_back(2.1);
-		v.push_back(22.1);
-
 		individual indiv(v);
 		indiv.setObjectiveFunction(new ObjectiveFunctionhyperBowl);
-		std::cout<<indiv.getObjectiveFunction()<<std::endl;
+		indiv.getObjectiveFunction();
 		//indiv(v);
 		
+		v.push_back(2.1);
+		v.push_back(22.1);
 		/*
 		hb.evaluate(indiv);*/
 	}
