@@ -6,8 +6,8 @@
 #include <algorithm>
 #include <random>
 //#include "sexEnum.h"
-#include "ObjectiveFunctionhyperBowl.cpp"
-#include "objectiveFunctionStrategy.cpp"
+#include "ObjectiveFunctionhyperBowl.h"
+#include "objectiveFunctionStrategy.h"
 
 #include "ObjectiveFunctionhyperBowl.h"
 #include "objectiveFunctionStrategy.h"
